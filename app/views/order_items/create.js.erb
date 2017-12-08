@@ -1,2 +1,10 @@
 $('#order_item_quantity').val(1);
 $('.cart-total').text('<%= cart_items %>');
+<% if @message.class == String %>
+  Materialize.toast('<%= @message %>', 4000)
+<% else %>
+  Materialize.toast('Something went wrong!', 4000)
+  <% @message.each do |message| %>
+    Materialize.toast('<%= message %>', 4000)
+  <% end %>
+<% end %>

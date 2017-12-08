@@ -9,7 +9,7 @@
   </head>
   <nav>
     <div class="nav-wrapper">
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <ul id="nav-mobile" class="right">
         <li>
           <%= link_to cart_path do %>
             Cart | Total items: <span class="cart-total"><%= cart_items %></span>
@@ -28,10 +28,28 @@
   </nav>
 
   <body>
-    <% flash.each do |name, msg| %>
-      <%= content_tag :div, msg, id: "flash_#{name}" %>
-    <% end %>
     <div class="container">
+      <% if flash[:notice] != nil %>
+        <div class="card-panel light-blue accent-2">
+          <%= flash[:notice] %>
+        </div>
+      <% end %>
+
+      <% if flash[:alert] != nil %>
+        <div class="card-panel orange accent-2">
+          <% if flash[:alert].class == Array %>
+            <p><strong>Something went wrong!</strong></p>
+            <ul>
+              <% flash[:alert].each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+            </ul>
+          <% else %>
+            <%= flash[:alert] %>
+          <% end %>
+        </div>
+      <% end %>
+
       <%= yield %>
     </div>
   </body>
