@@ -37,6 +37,7 @@ To install on your own machine, follow the instructions below:
 * Users can show and hide product details with AJAX.
 * Users can remove items from their shopping cart with AJAX.
 * Order items cannot have a quantity less than 1.
+* Site displays a flash message when user signs up, signs in, and signs out.
 
 ## Known Bugs
 
