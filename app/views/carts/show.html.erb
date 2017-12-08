@@ -18,7 +18,7 @@
 <% end %>
 
 <% if @previous_orders %>
-  <h3>Your order history:</h3>
+  <h3>Your Order History:</h3>
   <% @previous_orders.each do |order| %>
     <h4>Order id: <%= order.id %> was completed on: <%= order.updated_at.strftime("%c") %></h4>
     <% order.order_items.each do |item| %>
