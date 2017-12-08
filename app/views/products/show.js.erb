@@ -1,6 +1,6 @@
-$('#product-<%= @product.id %>').after('<%= j render "show" %>');
-$('#product-<%= @product.id %>').remove();
+$('#product-<%= @product.id %>').after('<%= j render "layouts/modal", object: @product %>');
+$('#modal-<% @product.id %> .modal-content').html('<%= j render "show" %>')
+$('#modal-<% @product.id %>').modal().modal('open');
 $('#hide-detail-<%= @product.id %>').click(function() {
-  $('#product-details-<%= @product.id %>').before('<%= j render @product %>');
-  $('#product-details-<%= @product.id %>').remove();
+  $('#modal-<% @product.id %>').remove();
 });

@@ -16,6 +16,43 @@
 
 @import "materialize";
 
+
+
+.product-box {
+  padding: 2em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.product-box .image-wrapper {
+  width: 40%;
+  min-width: 200px;
+}
+
 .image-wrapper img {
   width: 100%;
+}
+
+.product-info {
+  width: 55%;
+  min-width: 200px;
+  padding: .5em;
+}
+
+.new_order_item {
+  display: flex;
+  align-items: baseline;
+  max-width: 300px;
+}
+
+.quantity-input {
+  flex-shrink: 3;
+}
+
+.new_order_item .btn {
+  flex-shrink: 0;
+  padding-left: 9px;
+  padding-right: 9px;
 }
