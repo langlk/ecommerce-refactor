@@ -38,6 +38,14 @@ To install on your own machine, follow the instructions below:
 * Users can remove items from their shopping cart with AJAX.
 * Order items cannot have a quantity less than 1.
 * Site displays a flash message when user signs up, signs in, and signs out.
+* Ensure that users can't order a negative number of items.
+* Admins can update and delete products in addition to creating them.
+* Site displays flash messages when adding, updating and deleting products.
+* An image can be added to a product using Paperclip.
+* Product price can be entered as a decimal amount (ex: 19.99).
+* Product validates that:
+  * Product name, description, price exist.
+  * Product price is greater than 0.
 
 ## Known Bugs
 
