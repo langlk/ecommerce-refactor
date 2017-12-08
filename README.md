@@ -29,6 +29,13 @@ To install on your own machine, follow the instructions below:
     ```
   * The account will now have admin access to the app.
 
+### Running Tests
+
+* Before running tests, be sure to run ```rails db:test:prepare```
+* Testing AJAX functionality requires PhantomJS. You can install with Homebrew using ```brew install phantomjs```, or find instructions for installing it [here](https://github.com/teampoltergeist/poltergeist#installing-phantomjs).
+* To run all tests, run ```rspec``` in the project root.
+* To skip running AJAX tests, run ```rspec . --tag '~js'```.
+
 ## Specifications
 
 ### Refactoring
@@ -48,8 +55,7 @@ To install on your own machine, follow the instructions below:
   * Product price is greater than 0.
 * Product index uses flexbox instead of Materialize grid to format rows.
 * Remove "decimal" column from orders table and change total_price to a decimal instead of a string.
-
-## Known Bugs
+* Add integration tests for AJAX functionality.
 
 ## Support and contact details
 
