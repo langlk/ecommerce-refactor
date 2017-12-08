@@ -48,6 +48,8 @@ group :development, :test do
   gem 'capybara'
   gem 'simplecov', require: false
   gem 'faker'
+  gem 'poltergeist'
+  gem 'database_cleaner'
 end
 
 group :development do
