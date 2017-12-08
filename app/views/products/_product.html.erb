@@ -1,0 +1,6 @@
+<div class="col s4" id="product-<%= product.id %>">
+  <h4><%= link_to product.name, product_path(product), remote: true %></h4>
+  <div class="image-wrapper">
+    <%= image_tag product.image.url(:medium) %>
+  </div>
+</div>

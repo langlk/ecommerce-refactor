@@ -3,12 +3,7 @@
 <div class="row">
   <div class="section">
     <% @products.each do |product| %>
-      <div class="col s4">
-        <h4><%= link_to product.name, product_path(product) %></h4>
-        <div class="image-wrapper">
-          <%= image_tag product.image.url(:medium) %>
-        </div>
-      </div>
+      <%= render "product", product: product %>
     <% end %>
   </div>
 </div>
