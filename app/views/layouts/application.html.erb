@@ -20,14 +20,14 @@
         <% if current_user %>
           <li>
             <%= link_to cart_path do %>
-              <%= current_user.name %>'s Cart | Total items: <span class="cart-total"><%= cart_items %></span>
+              <%= current_user.name %>'s Cart | Total Items: <span class="cart-total"><%= cart_items %></span>
             <% end %>
           </li>
           <li><%= link_to "Sign out", '/sign_out' %></li>
         <% else %>
           <li>
             <%= link_to cart_path do %>
-              Cart | Total items: <span class="cart-total"><%= cart_items %></span>
+              Cart | Total Items: <span class="cart-total"><%= cart_items %></span>
             <% end %>
           </li>
           <li><%= link_to "Sign up", 'sign_up' %></li>
