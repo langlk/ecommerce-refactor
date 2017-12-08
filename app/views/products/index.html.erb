@@ -5,6 +5,9 @@
     <% @products.each do |product| %>
       <div class="col s4">
         <h4><%= product.name %></h4>
+        <div class="image-wrapper">
+          <%= image_tag product.image.url(:medium) %>
+        </div>
         <p><%= product.description %></p>
         <p><%= number_to_currency product.price %></p>
         <%= form_for @order_item, remote: true do |f| %>
