@@ -47,6 +47,7 @@ To install on your own machine, follow the instructions below:
   * Product name, description, price exist.
   * Product price is greater than 0.
 * Product index uses flexbox instead of Materialize grid to format rows.
+* Remove "decimal" column from orders table and change total_price to a decimal instead of a string.
 
 ## Known Bugs
 
