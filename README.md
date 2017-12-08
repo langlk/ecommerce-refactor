@@ -36,6 +36,7 @@ To install on your own machine, follow the instructions below:
 * Users can add items to their shopping cart from the index page with AJAX.
 * Users can show and hide product details with AJAX.
 * Users can remove items from their shopping cart with AJAX.
+* Order items cannot have a quantity less than 1.
 
 ## Known Bugs
 
