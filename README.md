@@ -46,6 +46,7 @@ To install on your own machine, follow the instructions below:
 * Product validates that:
   * Product name, description, price exist.
   * Product price is greater than 0.
+* Product index uses flexbox instead of Materialize grid to format rows.
 
 ## Known Bugs
 
