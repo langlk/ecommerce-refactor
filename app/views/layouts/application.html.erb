@@ -16,15 +16,20 @@
           <% end %>
         </ul>
       <ul id="nav-mobile" class="right">
-        <li>
-          <%= link_to cart_path do %>
-            Cart | Total items: <span class="cart-total"><%= cart_items %></span>
-          <% end %>
-        </li>
+
         <% if current_user %>
-          <li><%= current_user.email %></li>
+          <li>
+            <%= link_to cart_path do %>
+              <%= current_user.name %>'s Cart | Total items: <span class="cart-total"><%= cart_items %></span>
+            <% end %>
+          </li>
           <li><%= link_to "Sign out", '/sign_out' %></li>
         <% else %>
+          <li>
+            <%= link_to cart_path do %>
+              Cart | Total items: <span class="cart-total"><%= cart_items %></span>
+            <% end %>
+          </li>
           <li><%= link_to "Sign up", 'sign_up' %></li>
           <li><%= link_to "Sign in", '/sign_in' %></li>
         <% end %>
