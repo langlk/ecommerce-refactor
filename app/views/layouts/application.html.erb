@@ -9,13 +9,18 @@
   </head>
   <nav>
     <div class="nav-wrapper">
+      <% if current_user && current_user.admin? %>
+        <ul id="nav-mobile" class="left">
+          <li><%= link_to "Products", products_path %></li>
+          <li><%= link_to "Add a Product", new_product_path %></li>
+        </ul>
+      <% end %>
       <ul id="nav-mobile" class="right">
         <li>
           <%= link_to cart_path do %>
             Cart | Total items: <span class="cart-total"><%= cart_items %></span>
           <% end %>
         </li>
-        <li><%= link_to "See all products", products_path %></li>
         <% if current_user %>
           <li><%= current_user.email %></li>
           <li><%= link_to "Sign out", '/sign_out' %></li>
