@@ -1,10 +1,12 @@
 <h1>Shopping Cart</h1>
 
 <% if @order_items.any? %>
-  <%= render "orders/show", order: current_order  %>
-  <p id="finalize-link">
-    <%= link_to "Finalize Order", finalize_path %>
-  </p>
+  <div id="cart-with-items">
+    <%= render "orders/show", order: current_order  %>
+    <p id="finalize-link">
+      <%= link_to "Finalize Order", finalize_path %>
+    </p>
+  </div>
 <% else %>
   <p>Your shopping cart is empty.</p>
 <% end %>
