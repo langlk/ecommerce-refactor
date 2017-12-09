@@ -16,6 +16,10 @@
 
 @import "materialize";
 
+.container.contents {
+  padding-bottom: 30px;
+}
+
 .products {
   display: flex;
   flex-wrap: wrap;
