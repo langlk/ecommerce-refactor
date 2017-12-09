@@ -5,7 +5,7 @@
         <th>Unit Price</th>
         <th>Quantity</th>
         <th>Total Price</th>
-        <% unless order.status == 2 %>
+        <% unless order.finalized? %>
           <th></th>
         <% end %>
     </tr>
@@ -18,7 +18,7 @@
         <td><%= number_to_currency item.product.price %></td>
         <td><%= item.quantity %></td>
         <td><%= number_to_currency (item.product.price * item.quantity) %></td>
-        <% unless order.status == 2 %>
+        <% unless order.finalized? %>
           <td><%= link_to "Remove", order_item_path(item), remote: true, :data => {:confirm => "Are you sure you want to remove this item?", :method => "delete"} %></td>
         <% end %>
       </tr>

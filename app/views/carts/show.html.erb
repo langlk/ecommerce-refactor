@@ -12,7 +12,10 @@
 <% if @previous_orders %>
   <h3>Your Order History:</h3>
   <% @previous_orders.each do |order| %>
-    <h4>Order id: <%= order.id %> was completed on: <%= order.updated_at.strftime("%c") %></h4>
-    <%= render "orders/show", order: order  %>
+    <div class="section">
+      <h4><%= order.updated_at.strftime("%b %-d, %Y") %></h4>
+      <%= render "orders/show", order: order  %>
+      <h6>Order ID: <%= order.id %></h6>
+    </div>
   <% end %>
 <% end %>
