@@ -1,15 +1,7 @@
 <h1>Shopping Cart</h1>
 
 <% if @order_items.any? %>
-  <% @order_items.each do |item| %>
-    <div id="order-item-<%= item.id %>">
-      <p><%= item.product.name %> | <%= link_to "Remove", order_item_path(item), remote: true, :data => {:confirm => "Are you sure you want to remove this item?", :method => "delete"} %></p>
-      <p> Unit Price: <%= number_to_currency item.product.price %> | Quantity: <%= item.quantity %> | Total Price: <%= number_to_currency (item.product.price * item.quantity) %></p>
-    </div>
-  <% end %>
-  <p>
-    Your Total: <span class="cart-price"><%= number_to_currency current_order.total_price %></span>
-  </p>
+  <%= render "orders/show", order: current_order  %>
   <p id="finalize-link">
     <%= link_to "Finalize Order", finalize_path %>
   </p>
