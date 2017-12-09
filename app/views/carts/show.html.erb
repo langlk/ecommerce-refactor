@@ -13,7 +13,7 @@
 
 <% if current_user && @previous_orders.any? %>
   <div class="divider"></div>
-  <h3>Your Order History:</h3>
+  <h3>Your Order History</h3>
   <% @previous_orders.each do |order| %>
     <div class="section">
       <h4><%= order.updated_at.strftime("%b %-d, %Y") %></h4>
