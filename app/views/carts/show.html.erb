@@ -11,7 +11,7 @@
   <p>Your shopping cart is empty.</p>
 <% end %>
 
-<% if @previous_orders %>
+<% if current_user && @previous_orders.any? %>
   <div class="divider"></div>
   <h3>Your Order History:</h3>
   <% @previous_orders.each do |order| %>

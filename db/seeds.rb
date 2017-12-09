@@ -2,11 +2,18 @@ class Seed
 
   def self.begin
     seed = Seed.new
+    seed.destroy_old_data
     seed.generate_products
   end
 
-  def generate_products
+  def destroy_old_data
+    OrderItem.destroy_all
+    Order.destroy_all
     Product.destroy_all
+  end
+
+  def generate_products
+
     20.times do |i|
       Product.create!(
         name: Faker::Lorem.word,
