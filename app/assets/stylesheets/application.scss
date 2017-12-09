@@ -17,7 +17,12 @@
 @import "materialize";
 
 .container.contents {
+  padding-top: 20px;
   padding-bottom: 30px;
+}
+
+.brand-logo {
+  margin-left: 10px;
 }
 
 .products {
