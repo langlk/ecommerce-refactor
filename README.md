@@ -6,13 +6,14 @@
 
 ## Description
 
-_This is a refactor of an e-commerce website, forked from [epicodus-lessons/went-to-bali-mwahaha](https://github.com/epicodus-lessons/went-to-bali-mwahaha)._
+_This is a refactor of an e-commerce website, forked from [epicodus-lessons/went-to-bali-mwahaha](https://github.com/epicodus-lessons/went-to-bali-mwahaha). It adds AJAX functionality, fixes bugs, and cleans up styling. See "Refactoring" below for a complete list of changes._
 
 ## Installation and Setup
 
 To install on your own machine, follow the instructions below:
 
 * Clone this repository.
+* Ensure you have ImageMagick installed. Instructions are available [here](https://github.com/thoughtbot/paperclip#image-processor).
 * Run the following commands in the project root directory:
   ```
   bundle update
@@ -38,7 +39,45 @@ To install on your own machine, follow the instructions below:
 
 ## Specifications
 
+#### Models
+* Users:
+  * Store the following information (in addition to ID and timestamps):
+    * Name
+    * Email
+    * Encrypted Password
+* Products:
+  * Store the following information (in addition to ID and timestamps):
+    * Name
+    * Price
+    * Description
+    * Image
+  * Can be created, edited, viewed, and deleted
+* Orders:
+  * Store the following information (in addition to ID and timestamps):
+    * Status
+    * Associated User ID
+    * Total Price
+  * Can be created and updated with changes in items, and finalized.
+* Order Items:
+  * Store the following information (in addition to ID and timestamps):
+    * Associated Order ID
+    * Associated Product ID
+    * Quantity
+  * Can be created and destroyed
+
+#### User Access:
+* Unauthenticated users may:
+  * View products
+  * Add products to the session cart
+* Authenticated Basic users may:
+  * Finalize an order from the session cart
+  * View their order history
+* Admin users may:
+  * Add, Edit, and Delete products
+
 ### Refactoring
+
+_The following changes have been made from the original project at [epicodus-lessons/went-to-bali-mwahaha](https://github.com/epicodus-lessons/went-to-bali-mwahaha)_
 
 * Users can add items to their shopping cart from the index page with AJAX.
 * Users can show and hide product details with AJAX.
@@ -55,7 +94,8 @@ To install on your own machine, follow the instructions below:
   * Product price is greater than 0.
 * Product index uses flexbox instead of Materialize grid to format rows.
 * Remove "decimal" column from orders table and change total_price to a decimal instead of a string.
-* Add integration tests for AJAX functionality.
+* Add testing, including integration tests for AJAX functionality.
+* Updates to styling to improve the aesthetics of the site.
 
 ## Support and contact details
 
