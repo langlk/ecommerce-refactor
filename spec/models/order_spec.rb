@@ -38,4 +38,16 @@ describe Order do
       expect(order.user).to eq(user)
     end
   end
+
+  describe '#finalized?' do
+    it "returns true if order status is 2" do
+      order = FactoryBot.create(:order, status: 2)
+      expect(order.finalized?).to eq(true)
+    end
+
+    it "returns if order status is not 2" do
+      order = FactoryBot.create(:order)
+      expect(order.finalized?).to eq(false)
+    end
+  end
 end

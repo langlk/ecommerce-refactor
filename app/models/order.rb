@@ -17,4 +17,8 @@ class Order < ApplicationRecord
     self.status = 2
     self.save
   end
+
+  def finalized?
+    return self.status == 2
+  end
 end
